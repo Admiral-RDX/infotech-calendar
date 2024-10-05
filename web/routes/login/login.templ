@@ -5,7 +5,7 @@ templ LoginFrag() {
 	@LoginFragJS()
 	<div class="login-frag">
 		<h1>Login</h1>
-		<form hx-post="/login/submit" hx-target="#login-response" hx-swap="outerHTML">
+		<form hx-post="/login/submit" hx-target="#login-response" hx-swap="innerHTML">
 			<div class="pin-container">
 				<input type="hidden" id="pin-code" name="pin-code" required/>
 				<div class="pin-inputs">

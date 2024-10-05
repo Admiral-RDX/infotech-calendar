@@ -4,6 +4,12 @@ templ Base(pageContent templ.Component) {
 	<html lang="en">
 		@Head()
 		<body>
+			// Nav
+			<nav class="nav-menu">
+				<div class="spacer"></div>
+				<a href="/dashboard">Dashboard</a>
+				<a href="/calendar">Calendar</a>
+			</nav>
 			@pageContent
 		</body>
 	</html>

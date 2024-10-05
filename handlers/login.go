@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"fmt"
@@ -11,6 +11,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// Login handlers
 func HandleLogin(w http.ResponseWriter, r *http.Request) {
 	envErr := godotenv.Load()
 	if envErr != nil {
@@ -31,7 +32,7 @@ func HandleLogin(w http.ResponseWriter, r *http.Request) {
 
 	if pinCode != USER_PIN_CODE {
 		w.WriteHeader(http.StatusAccepted)
-		fmt.Fprint(w, "<div>Invalid username or password</div>")
+		fmt.Fprint(w, "<p>Email or password is incorrect.</p>")
 		return
 	}
 

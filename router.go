@@ -1,6 +1,7 @@
 package main
 
 import (
+	handlers "infotech-calendar/handlers"
 	auth_helpers "infotech-calendar/helpers"
 	"infotech-calendar/web/base"
 	"infotech-calendar/web/routes/calendar"
@@ -28,7 +29,7 @@ func registerLoginRoutes(mux *http.ServeMux) {
 	})
 
 	// Login submit handler
-	mux.HandleFunc("/login/submit", HandleLogin)
+	mux.HandleFunc("/login/submit", handlers.HandleLogin)
 }
 
 func registerDashboardRoutes(mux *http.ServeMux) {
@@ -45,6 +46,8 @@ func registerDashboardRoutes(mux *http.ServeMux) {
 		ctx := r.Context()
 		dashboardPage.Render(ctx, w)
 	})
+
+	mux.HandleFunc("/dashboard/events", handlers.GetEventData)
 }
 
 func registerCalendarRoutes(mux *http.ServeMux) {

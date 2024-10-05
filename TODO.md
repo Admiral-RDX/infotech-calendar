@@ -1,0 +1,6 @@
+- [x] GORM
+- [x] DB Pool
+- [x] SQL-Lite
+- [x] DB Helpers
+- [-] Dashboard (table, search, modal form)
+- [ ] Calendar (list of events, client refresh + scroll)

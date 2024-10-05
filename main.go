@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"infotech-calendar/database"
 	"net/http"
 )
 
 func main() {
 	mux := http.NewServeMux()
+	database.InitDB()
 
 	// Register routes.
 	registerLoginRoutes(mux)

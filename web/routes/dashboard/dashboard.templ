@@ -1,8 +1,85 @@
 package dashboard
 
 templ DashboardFrag() {
+	@dashboardStyle()
 	<div class="dashboard">
-		<h1>Dashboard</h1>
-		<p>Dashboard content goes here</p>
+		<div class="event-table">
+			<table>
+				<tr>
+					<th>Company</th>
+					<th>Contact</th>
+					<th>Country</th>
+				</tr>
+				<tr>
+					<td>Alfreds Futterkiste</td>
+					<td>Maria Anders</td>
+					<td>Germany</td>
+				</tr>
+				<tr>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+			</table>
+		</div>
+		<div class="handling-form">
+			<form>
+				<input placeholder="Event name" type="text" id="fname" name="fname"/>
+				<input placeholder="Event description" type="text" id="lname" name="lname"/>
+				<select>
+					<option value="birthday">Birthday</option>
+					<option value="name-day">Name day</option>
+					<option value="holiday">Holiday</option>
+				</select>
+				<input type="date"/>
+				<input type="submit" value="Submit"/>
+			</form>
+		</div>
 	</div>
+}
+
+templ dashboardStyle() {
+	<style>
+        .dashboard {
+            display: flex;
+        }
+
+        .event-table {
+            width: 50%;
+            padding: 10px;
+        }
+
+        .event-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .event-table th {
+            background-color: #f2f2f2;
+        }
+
+        .event-table th, .event-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .handling-form {
+            width: 50%;
+            padding: 1rem;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .handling-form input {
+            width: 100%;
+            padding: .5rem;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+    </style>
 }
